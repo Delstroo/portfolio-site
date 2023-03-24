@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website - Delstun McCray</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/abac1e65b5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav class="top-bar fixed">
+                <img src="Delstun.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="headerText">
+                <p>iOS Developer</p>
+                <h1>Hi, my name is</h1>
+                <h2>Delstun McCray.</h2>
+            </div>
+        </div>
+    </div>
+    <!-- ----------about-------------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="user.jpeg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>In early of 2021, I embarked on my journey in iOS development, a decision which has proven to be one of the most rewarding experiences of my career. I am deeply passionate about honing my skills with Swift and Objective-C, and take pride in the progress I have made in this pursuit.<br><br>As a highly motivated individual, I have consistently demonstrated a desire to tackle new challenges and expand my knowledge base. I possess a strong work ethic, an innate ability to adapt to changing circumstances, and exceptional interpersonal skills, which have enabled me to work effectively both independently and collaboratively. Additionally, I am adept at mastering new skills quickly, a trait which has allowed me to excel in various work environments.</p>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>UI/UX</span><br>Designer Web/App interfaces</li>
+                                <li><span>iOS Development</span><br>Swift - SwiftUI -
+                                    UIKit - Cocoa Pods - Git -
+                                    Github - API Integration -
+                                    CloudKit - MVC - MVVM - Firebase - CloudKit</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>2021 - Current</span><br>iOS Developer at Midwestern Interactive LLC.</li>
+                                <li><span>2020 - 2020</span><br>iOS Developer at Dev Mountain.</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2020 - 2020</span><br>Dev Mountain, Certificate of Completion.</li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ------------services----------- -->
+<!-- ------------portfilio-------------- -->
+<div id="portfolio">
+<div class="container">
+    <h1 class="sub-title">My work</h1>
+    <div class="work-list">
+        <div class="job">
+            <div class="work">
+            <img src="work1.png">
+            <div class="layer">
+                <h3>YOU.com</h3>
+                <p>You.com is the search engine & browser you control— your privacy, sources and time. Welcome to private, conversational, ad-free search!</p>
+                <b><br>● Worked closely with Kotlin Developer, designers, and product managers to ensure a rich experience for all users.<br><br>
+                    ● Worked with UIKit, Core Location, Restful Web Services, and WebKit.<br><br>
+                    ● Worked with both MVC and MVVM app architecture.<br><br>
+                    ● Worked with SwiftUI to make home screen widgets.<br><br>
+                    ● Implemented web bridge from JavaScript to Swift to add ChatGPT into mobile applications.<br><br></b>
+                <a href="https://apps.apple.com/us/app/you-com-search-and-browser/id1600782099"><i class="fa-solid fa-link"></i></a>
+            </div>
+        </div>
+        </div>
+        <div class="work">
+            <img src="work2.png">
+            <div class="layer">
+                <h3>MusicGoers</h3>
+                <p>The app for planning for concerts with friends!</p>
+                <b><br>● Updated design to match design pattern and theme of app for a better user experience and navigation.<br><br>
+                    ● Created readable and reusable code.<br><br>
+                    ● Worked with Jira to better set goals and to better layout communication<br><br>
+                    for sprint planning.<br><br>
+                    ● Experience in Firebase, MapKit, and MessageKit.<br><br>
+                    ● Worked with Github, Xcode, and Figma</b>
+                <a href="https://github.com/Reesesben/MusicGoer"><i class="fa-solid fa-link"></i></a>
+            </div>
+        </div>
+        <div class="work">
+            <img src="work3.png">
+            <div class="layer">
+                <h3>LolBuilds</h3>
+                <p>LolBuilds is a small app made for users to see League Of Legends champions, their stats, items, and allows you to make custom builds.</p>
+                <b><br>● All the UI design for any and all view controllers in the app.<br><br>
+                    ● Made with readable and reusable code.<br><br>
+                    ● Saving user data locally by implementing JSON persistence.<br><br>
+                    ● Utilized multiple Riot Games APIs to fetch and display up to date game data to users.<br><br>
+                    ● Worked with Github and Xcode<br><br>
+                </b>
+                <a href="https://github.com/Delstroo/Personal-Project"><i class="fa-solid fa-link"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- ---------contact----------- -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/delstun.mccray.1"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href="https://www.linkedin.com/in/delstun-mccray-98538721b/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/Delstroo"><i class="fa-brands fa-square-github"></i></a>
+                </div>
+                <a href="Resume.pdf" download class="btn btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name", placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textArea name="Message" rows="6" placeholder="Your Message"></textArea>
+                    <button type="submit" class="btn btn3">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright © Delstun.</p>
+    </div>
+</div>
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right = "0"
+        }
+
+        function closemenu(){
+            sidemenu.style.right = "-200px"
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyOdkZwLnGOBX5ly2rVeNQvhkjI0kejx7YqpS2FK0swZUeYIpLp2Rs_3Wy2a82IlKYf/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully!"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
