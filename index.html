@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/abac1e65b5.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="header">
+    <div id="header" class="animated">
         <div class="container">
             <nav class="top-bar fixed">
                 <img src="Delstun.png" class="logo">
@@ -194,5 +194,11 @@
             .catch(error => console.error('Error!', error.message))
         })
       </script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const header = document.getElementById("header");
+            header.classList.add("animated");
+        });
+    </script>
 </body>
 </html>

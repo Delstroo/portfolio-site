@@ -20,6 +20,37 @@ body {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    opacity: 0; /* Start with 0 opacity to hide the element */
+    transition: opacity 10s; /* Add a transition for the opacity property */
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s
+}
+
+/* Add a class to trigger the animation */
+#header.animated {
+    opacity: 1; /* Set the final opacity to 1 for the fade-in effect */
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 .container{
