@@ -1,0 +1,67 @@
+/* contactStyle.css */
+
+
+@font-face {
+    font-family: 'TTSupermolotNeue-Regular'; /* Font family name */
+    src: url('fonts/TTSupermolotNeue-Regular.ttf') format('truetype'); /* Path to your font file */
+    /* Add other font formats (e.g., woff, woff2) for better browser compatibility */
+    /* You can add additional src lines for different font formats */
+    font-weight: normal; /* Font weight */
+    font-style: normal; /* Font style */
+}
+
+@font-face {
+    font-family: 'TTSupermolotNeue-Medium'; /* Font family name */
+    src: url('fonts/TTSupermolotNeue-Medium.ttf') format('truetype'); /* Path to your font file */
+    /* Add other font formats (e.g., woff, woff2) for better browser compatibility */
+    /* You can add additional src lines for different font formats */
+    font-weight: medium; /* Font weight */
+    font-style: medium; /* Font style */
+}
+
+
+body {
+    display: flex;
+    justify-content: flex-end; /* Align content to the right */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%; /* Adjust the width of the content container */
+    margin-left: 20%; /* Adjust the distance from the right */
+    background-color: aqua;
+}
+
+h1 {
+    text-align: center;
+}
+
+.input-container input[type="text"],
+.input-container textarea {
+    margin-left: 20%; /* Adjust the percentage as needed */
+    width: calc(40% - 22px); /* Adjust width for text fields and textarea */
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: none; /* Remove default border */
+    border-bottom: 1px solid #ccc; /* Add bottom border for an underline effect */
+    background-color: transparent; /* Set background color to transparent */
+}
+
+/* Apply custom font to input[type="submit"] */
+input[type="submit"] {
+    margin-left: 20%; /* Adjust the percentage as needed */
+    width: calc(40% - 22px); /* Adjust width for the submit button */
+    padding: 10px 20px;
+    background-color: white; /* Set background color to transparent */
+    color: #fff; /* Set text color to white */
+    border: 2px solid #fff; /* Add a solid white border */
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s; /* Add transition for color changes */
+}
+
+input[type="submit"]:hover {
+    background-color: #fff; /* Change background color to white on hover */
+    color: #000; /* Change text color to black on hover */
+}

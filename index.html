@@ -17,7 +17,7 @@
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact Me</a></li>
+                    <li><a id="contactLink" href="#contact">Contact Me</a></li>
                     <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
                 </ul>
                 <i class="fa-solid fa-bars" onclick="openmenu()"></i>
@@ -203,5 +203,17 @@
             header.classList.add("animated");
         });
     </script>
+
+    <script>
+    // Locate the contact link element
+    var contactLink = document.getElementById("contactLink");
+
+    // Add an event listener to handle the click event
+    contactLink.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent the default action of the link
+        window.location.href = "contact.html"; 
+        // Replace 'contact.html' with the name of your custom HTML page
+    });
+</script>
 </body>
 </html>
