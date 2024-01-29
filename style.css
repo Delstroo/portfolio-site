@@ -115,6 +115,12 @@ nav ul li a:hover::after{
     margin-top: -8px;
 }
 
+.headerText p {
+    font-size: 18px;
+    color: #EBEBF599;
+    max-width: 40%;
+}
+
 /* -----------about--------- */
 #about {
     padding: 120px 0;
@@ -577,7 +583,7 @@ nav .fa-solid{
         background-image: url(background-for-phone.png);
     }
     .headerText{
-        margin-top: 118%;
+        margin-top: 180%;
         font-size: 16px;
     }
     .headerText h1{
@@ -590,8 +596,11 @@ nav .fa-solid{
     }
 
     .headerText p {
-        margin-bottom: -20px;
+        font-size: 18px;
+        color: #EBEBF599;
+        max-width: 100%;
     }
+    
     
     nav .fa-solid{
         display: block;
