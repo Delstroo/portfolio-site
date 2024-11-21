@@ -442,6 +442,77 @@ nav .fa-solid{
     display: none;
 }
 
+/* Awards Section Styles */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.sub-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.awards-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.award-tile {
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    padding-top: 20%; /* To make room for the white border */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.award-tile:hover {
+    transform: scale(1.05);
+}
+
+.white-border {
+    background-color: #ffffff;
+    width: 100%;
+    height: 15%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.award-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: -10%; /* Half in, half out of the white border */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.award-details {
+    margin-top: 60px; /* Account for the image */
+    padding: 1rem;
+}
+
+.award-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.award-details p {
+    font-size: 1rem;
+    color: #ededed;
+}
+
+
 /* -------------------css for small screens ------------- */
 @media only screen and (max-width: 600px){
     #header{
