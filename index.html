@@ -17,6 +17,7 @@
                     <li><a href="#header">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#awards">Awards</a></li>
                     <li><a href="#contact">Contact Me</a></li>
                     <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
                 </ul>
@@ -74,7 +75,7 @@ In addition to my technical skills, I pride myself on tackling challenges with a
         </div>
     </div>
     <!-- ------------services----------- -->
-<!-- ------------portfilio-------------- -->
+<!-- ------------portfolio-------------- -->
 <div id="portfolio">
 <div class="container">
     <h1 class="sub-title">My work</h1>
@@ -136,86 +137,64 @@ In addition to my technical skills, I pride myself on tackling challenges with a
     </div>
 </div>
 </div>
-<!-- ---------contact----------- -->
+<!-- ------------Awards Section-------------- -->
+<section id="awards" class="container">
+    <h2 class="sub-title">Awards & Recognitions</h2>
+    <div class="awards-list">
+        <!-- Award 1 -->
+        <div class="award-tile">
+            <div class="white-border"></div>
+            <img src="award1.jpg" alt="Award Image 1" class="award-image">
+            <div class="award-details">
+                <h3>Best Mobile App Design 2023</h3>
+                <p>Presented by XYZ Awards</p>
+            </div>
+        </div>
+
+        <!-- Award 2 -->
+        <div class="award-tile">
+            <div class="white-border"></div>
+            <img src="award2.jpg" alt="Award Image 2" class="award-image">
+            <div class="award-details">
+                <h3>Innovative UI Award 2022</h3>
+                <p>Design Awards Global</p>
+            </div>
+        </div>
+
+        <!-- Award 3 -->
+        <div class="award-tile">
+            <div class="white-border"></div>
+            <img src="ITF+.png" alt="Award Image 3" class="award-image">
+            <div class="award-details">
+                <h3>Top UX Implementation 2021</h3>
+                <p>Annual Design Convention</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ------------Contact Me-------------- -->
 <div id="contact">
     <div class="container">
         <div class="row">
             <div class="contact-left">
                 <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i> delstun.mccray@gmail.com</p>
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/delstun.mccray.1"><i class="fa-brands fa-square-facebook"></i></a>
-                    <a href="https://www.linkedin.com/in/delstun-mccray-98538721b/"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/Delstroo"><i class="fa-brands fa-square-github"></i></a>
+                    <a href="https://www.linkedin.com/in/delstun-mccray/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/Delstroo"><i class="fa-brands fa-github"></i></a>
                 </div>
-                <a href="Resume.pdf" download class="btn btn2">Download CV</a>
             </div>
             <div class="contact-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="Name", placeholder="Your Name" required>
-                    <input type="email" name="Email" placeholder="Your Email" required>
-                    <textArea name="Message" rows="6" placeholder="Your Message"></textArea>
-                    <button type="submit" class="btn btn3">Submit</button>
+                <form>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
                 </form>
-                <span id="msg"></span>
             </div>
         </div>
     </div>
-    <div class="copyright">
-        <p>Copyright © Delstun.</p>
-    </div>
 </div>
-    <script>
-
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");
-            }
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
-            }
-
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
-    </script>
-
-    <script>
-        var sidemenu = document.getElementById("sidemenu");
-
-        function openmenu(){
-            sidemenu.style.right = "0"
-        }
-
-        function closemenu(){
-            sidemenu.style.right = "-200px"
-        }
-    </script>
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbyOdkZwLnGOBX5ly2rVeNQvhkjI0kejx7YqpS2FK0swZUeYIpLp2Rs_3Wy2a82IlKYf/exec'
-        const form = document.forms['submit-to-google-sheet']
-        const msg = document.getElementById("msg")
-      
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                msg.innerHTML = "Message sent successfully!"
-                setTimeout(function(){
-                    msg.innerHTML = ""
-                },5000)
-                form.reset()
-            })
-            .catch(error => console.error('Error!', error.message))
-        })
-      </script>
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const header = document.getElementById("header");
-            header.classList.add("animated");
-        });
-    </script>
+<script src="script.js"></script>
 </body>
 </html>
