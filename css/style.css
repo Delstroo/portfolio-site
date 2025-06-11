@@ -1,0 +1,676 @@
+/* Custom Tailwind Configuration - Combined Color Palettes and Fonts */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define CSS Variables for both themes */
+/* Default Theme: Normal (v1) - based on index.html */
+:root {
+    --bg-dark: #0c0d16;         /* From index.html */
+    --bg-medium: #1a202c;       /* Based on index.html gray-900 / gray-950 */
+    --bg-light: #edf2f70c;        /* From index.html */
+    --main-accent: #3b82f6;     /* From index.html: Tailwind blue-600 */
+    --secondary-accent: #00ccff;/* From index.html: Tailwind cyan-400 equivalent */
+    --highlight: #84cc16;       /* From index.html: Tailwind lime-400 */
+    --text-color-primary: #e2e8f0; /* From index.html */
+    --text-color-secondary: #a0aec0; /* From index.html */
+    --font-sans-var: 'Inter', sans-serif;
+    --font-mono-var: 'IBM Plex Mono', monospace; /* From index.html */
+    --font-heading-var: 'Inter', sans-serif; /* Adjusted to Inter as a fallback/general for Normal */
+    --cursor-svg: auto;
+    --h1-gradient-from: #3b82f6; /* From index.html */
+    --h1-gradient-to: #00ccff;   /* From index.html */
+    --h1-text-shadow: 0 0 20px rgba(0,204,255,0.8); /* From index.html */
+
+    /* Specific normal elements */
+    --digital-grid-display: block; /* Index.html shows grid */
+    --digital-grid-color: rgba(47, 67, 107, 0.4); /* From index.html */
+    --digital-grid-size: 20px; /* From index.html */
+    --profile-glow-shadow: 0 0 20px rgba(59, 130, 246, 0.7); /* From index.html */
+    --about-overlay-display: block; /* From index.html */
+    --about-overlay-url: url('https://placehold.co/1920x1080/0d1222/1a202c?text=Circuit+Overlay'); /* From index.html */
+}
+
+/* Cyberpunk Theme Overrides - based on indexv2.html */
+body.cyberpunk-theme {
+    --bg-dark: #0a0a1a;         /* From indexv2.html */
+    --bg-medium: #1a1a2e;       /* From indexv2.html */
+    --bg-light: #2d2d4d;        /* From indexv2.html */
+    --main-accent: #00ffff;     /* Neon Cyan from indexv2.html */
+    --secondary-accent: #ff00ff;/* Neon Magenta from indexv2.html */
+    --highlight: #00ff00;       /* Neon Lime from indexv2.html */
+    --text-color-primary: #e0e0e0; /* From indexv2.html */
+    --text-color-secondary: #999999; /* From indexv2.html */
+    --font-sans-var: 'Inter', sans-serif;
+    --font-mono-var: 'Space Mono', monospace; /* From indexv2.html */
+    --font-heading-var: 'Orbitron', sans-serif; /* From indexv2.html */
+    --cursor-svg: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="cyan" d="M13.2 0l-3.2 6.8-.7.2-4.5.8L0 12l4.8 4.2.7.2 4.5.8 3.2 6.8 3.2-6.8.7-.2 4.5-.8L24 12l-4.8-4.2-.7-.2-4.5-.8zm-3.2 22.8L2 12l8-7 8 7-8 7.8z"/></svg>') 12 12, auto; /* From indexv2.html */
+    --h1-gradient-from: #00ffff; /* From indexv2.html */
+    --h1-gradient-to: #ff00ff;   /* From indexv2.html */
+    --h1-text-shadow: 0 0 20px rgba(0,255,255,0.8); /* From indexv2.html */
+
+    /* Specific cyberpunk elements */
+    --digital-grid-display: block; /* Indexv2.html shows grid */
+    --digital-grid-color: rgba(0, 255, 255, 0.2); /* From indexv2.html */
+    --digital-grid-size: 25px; /* From indexv2.html */
+    --profile-glow-shadow: 0 0 20px rgba(0, 255, 255, 0.7); /* From indexv2.html */
+    --about-overlay-display: block; /* From indexv2.html */
+    --about-overlay-url: url('https://placehold.co/1920x1080/1a1a2e/2d2d4d?text=CIRCUIT+OVERLAY'); /* From indexv2.html */
+}
+
+/* Minimalist Theme Overrides - black and white */
+body.minimalist-theme {
+    --bg-dark: #FFFFFF; /* White background */
+    --bg-medium: #F0F0F0; /* Light gray for medium background */
+    --bg-light: #C0C0C0; /* Medium gray for light background */
+    --main-accent: #000000; /* Black for main accents */
+    --secondary-accent: #333333; /* Dark gray for secondary accents */
+    --highlight: #666666; /* Medium dark gray for highlights */
+    --text-color-primary: #000000; /* Black text */
+    --text-color-secondary: #555555; /* Dark gray for secondary text */
+    --font-sans-var: 'Inter', sans-serif;
+    --font-mono-var: 'Space Mono', monospace;
+    --font-heading-var: 'Inter', sans-serif;
+    --cursor-svg: auto;
+    --h1-gradient-from: var(--main-accent);
+    --h1-gradient-to: var(--secondary-accent);
+    --h1-text-shadow: none;
+
+    /* Minimalist elements - turn off distracting visuals */
+    --digital-grid-display: none;
+    --digital-grid-color: transparent;
+    --digital-grid-size: 0px;
+    --profile-glow-shadow: none;
+    --about-overlay-display: none;
+    --about-overlay-url: none;
+}
+
+/* Base styles using CSS variables */
+body {
+    font-family: var(--font-sans-var);
+    background-color: var(--bg-dark);
+    color: var(--text-color-primary);
+    overflow-x: hidden;
+    cursor: var(--cursor-svg);
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition for theme change */
+}
+
+.font-mono { font-family: var(--font-mono-var); }
+.font-heading { font-family: var(--font-heading-var); }
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Subtle digital grid background for hero */
+.digital-grid-bg {
+    background-image: radial-gradient(circle at 1px 1px, var(--digital-grid-color) 1px, transparent 0);
+    background-size: var(--digital-grid-size) var(--digital-grid-size);
+    background-blend-mode: overlay;
+    display: var(--digital-grid-display);
+}
+
+/* About section overlay */
+.about-overlay-bg {
+    background-image: var(--about-overlay-url);
+    background-size: cover;
+    background-blend-mode: overlay;
+    display: var(--about-overlay-display);
+}
+
+/* Global theme-dependent glow effects */
+/* Adjusted for minimalist theme to have no glow */
+.theme-border-main {
+    border-color: var(--main-accent) !important;
+    box-shadow: 0 0 20px rgba(var(--main-accent-rgb-r), var(--main-accent-rgb-g), var(--main-accent-rgb-b), 0.8);
+}
+body.minimalist-theme .theme-border-main {
+    box-shadow: none; /* No shadow in minimalist mode */
+}
+
+.theme-text-main {
+    text-shadow: 0 0 15px rgba(var(--main-accent-rgb-r), var(--main-accent-rgb-g), var(--main-accent-rgb-b), 0.9);
+}
+body.minimalist-theme .theme-text-main {
+    text-shadow: none; /* No shadow in minimalist mode */
+}
+
+.theme-border-secondary {
+    border-color: var(--secondary-accent) !important;
+    box-shadow: 0 0 20px rgba(var(--secondary-accent-rgb-r), var(--secondary-accent-rgb-g), var(--secondary-accent-rgb-b), 0.8);
+}
+body.minimalist-theme .theme-border-secondary {
+    box-shadow: none; /* No shadow in minimalist mode */
+}
+
+.theme-text-secondary-accent {
+    text-shadow: 0 0 15px rgba(var(--secondary-accent-rgb-r), var(--secondary-accent-rgb-g), var(--secondary-accent-rgb-b), 0.9);
+}
+body.minimalist-theme .theme-text-secondary-accent {
+    text-shadow: none; /* No shadow in minimalist mode */
+}
+
+.theme-text-highlight {
+    text-shadow: 0 0 15px rgba(var(--highlight-rgb-r), var(--highlight-rgb-g), var(--highlight-rgb-b), 0.9);
+}
+body.minimalist-theme .theme-text-highlight {
+    text-shadow: none; /* No shadow in minimalist mode */
+}
+
+
+/* Keyframe animations - now generic and colors use CSS vars */
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px var(--main-accent); }
+    50% { box-shadow: 0 0 40px var(--main-accent); }
+}
+body.minimalist-theme .animate-[pulse-glow_2s_infinite_ease-in-out] {
+    animation: none !important; /* Disable glow animation for minimalist theme */
+}
+
+
+@keyframes pan-background {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+@keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+body.minimalist-theme .animate-spin-slow-border {
+    animation: none !important; /* Disable spin animation for minimalist theme */
+}
+
+
+@keyframes fade-in-from-bottom {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* H1 animations */
+@keyframes flicker-light {
+    0%, 100% { opacity: 1; }
+    5%, 15%, 25%, 35%, 45% { opacity: 0.2; }
+    10%, 20%, 30%, 40%, 50% { opacity: 1; }
+    55% { opacity: 0.5; }
+    60% { opacity: 1; }
+    65% { opacity: 0.3; }
+    70% { opacity: 1; }
+    75% { opacity: 0.8; }
+    80% { opacity: 1; }
+    82% { opacity: 0.6; }
+    84% { opacity: 1; }
+    86% { opacity: 0.4; }
+    88% { opacity: 1; }
+    90% { opacity: 0.7; }
+    92% { opacity: 1; }
+    94% { opacity: 0.5; }
+    96% { opacity: 1; }
+    98% { opacity: 0.2; }
+    99% { opacity: 1; }
+}
+
+@keyframes glitch-text {
+    0% { transform: translate(0); text-shadow: 0 0 15px var(--main-accent); }
+    10% { transform: translate(-1px, 1px); text-shadow: 0 0 15px var(--secondary-accent); }
+    20% { transform: translate(1px, -1px); text-shadow: 0 0 15px var(--main-accent); }
+    30% { transform: translate(-1px, -1px); text-shadow: 0 0 15px var(--secondary-accent); }
+    40% { transform: translate(1px, 1px); text-shadow: 0 0 15px var(--main-accent); }
+    50% { transform: translate(0); text-shadow: 0 0 15px var(--main-accent); }
+    100% { transform: translate(0); text-shadow: 0 0 15px var(--main-accent); }
+}
+
+/* New grow-line animation for the horizontal timeline line */
+@keyframes grow-line {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+/* Apply specific animations */
+.animate-pan-bg {
+    animation: pan-background 60s linear infinite alternate; /* Slow, continuous pan */
+}
+
+/* Initial state for elements that will animate on scroll */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+}
+/* State when animation is active for non-timeline elements */
+.animate-on-scroll.is-visible {
+    animation: fade-in-from-bottom 0.8s ease-out forwards;
+}
+
+/* Styling for the Job Description List */
+#job-description-list {
+    list-style-type: disc; /* Uses standard bullet points */
+    padding-left: 1.5rem; /* Adds indentation to the list */
+    margin-top: 1rem; /* Creates space above the list */
+    color: var(--text-color-primary); /* Uses the primary text color defined in your theme variables */
+    font-family: var(--font-mono-var); /* Uses the monospace font defined in your theme variables */
+}
+
+#job-description-list li {
+    margin-bottom: 0.75rem; /* Adds space between each individual job description bullet point */
+    line-height: 1.6; /* Increases line spacing for better readability */
+    font-size: 0.95rem; /* Sets a slightly adjusted font size for the list items */
+}
+
+/* Custom styles for the horizontal timeline effect */
+.horizontal-timeline-container {
+    position: relative;
+    min-height: 500px; /* Changed from fixed height to min-height and increased value */
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 4rem; /* Increased padding */
+    padding-top: 4rem;    /* Increased padding */
+    -webkit-overflow-scrolling: touch;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    width: 100%;
+}
+
+.horizontal-timeline-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0%;
+    height: 6px;
+    background-color: var(--main-accent);
+    transform: translateY(-50%);
+    z-index: 0;
+    box-shadow: 0 0 15px rgba(var(--main-accent-rgb-r), var(--main-accent-rgb-g), var(--main-accent-rgb-b), 0.8);
+}
+body.minimalist-theme .horizontal-timeline-line {
+    box-shadow: none; /* No shadow */
+}
+
+
+.horizontal-timeline-items {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+    gap: 5rem;
+    min-width: fit-content;
+}
+
+.timeline-h-item {
+    flex-shrink: 0;
+    flex-basis: 300px;
+    min-width: 280px;
+    max-width: 350px;
+    position: relative;
+    z-index: 2;
+    background-color: var(--bg-medium); /* Use theme variable */
+    border: 2px solid var(--main-accent); /* Use theme variable */
+    box-shadow: 0 0 20px rgba(var(--main-accent-rgb-r), var(--main-accent-rgb-g), var(--main-accent-rgb-b), 0.2);
+    @apply rounded-xl shadow-lg p-8 text-left transform hover:scale-105 transition duration-300 ease-in-out hover:shadow-2xl;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out, background-color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+}
+body.minimalist-theme .timeline-h-item {
+    box-shadow: none; /* No shadow in minimalist mode */
+}
+.timeline-h-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Styles for alternating items (above/below the line) */
+.timeline-h-item:nth-child(odd) {
+    margin-bottom: 170px;
+    margin-top: 0;
+}
+
+.timeline-h-item:nth-child(even) {
+    margin-top: 170px;
+    margin-bottom: 0;
+}
+
+/* Branching Line and Dot */
+.timeline-h-item .branch-line {
+    position: absolute;
+    left: 50%;
+    width: 5px;
+    background-color: var(--main-accent); /* Use theme variable */
+    transform: translateX(-50%);
+    z-index: 3;
+    box-shadow: 0 0 12px rgba(var(--main-accent-rgb-r), var(--main-accent-rgb-g), var(--main-accent-rgb-b), 0.7);
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+body.minimalist-theme .timeline-h-item .branch-line {
+    box-shadow: none; /* No shadow */
+}
+
+.timeline-h-item .branch-dot {
+    position: absolute;
+    left: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--main-accent); /* Use theme variable */
+    border-radius: 50%;
+    border: 5px solid var(--bg-dark); /* Use theme variable */
+    box-shadow: 0 0 0 8px rgba(var(--main-accent-rgb-r), var(--main-accent-rgb-g), var(--main-accent-rgb-b), 0.4), 0 0 20px rgba(var(--main-accent-rgb-r), var(--main-accent-rgb-g), var(--main-accent-rgb-b), 0.8);
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    transition: all 0.3s ease-in-out, background-color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+}
+body.minimalist-theme .timeline-h-item .branch-dot {
+    box-shadow: none; /* No shadow */
+}
+
+
+.timeline-h-item:hover .branch-dot {
+    transform: translate(-50%, -50%) scale(1.2);
+    box-shadow: 0 0 0 10px rgba(var(--main-accent-rgb-r), var(--main-accent-rgb-g), var(--main-accent-rgb-b), 0.5), 0 0 30px rgba(var(--main-accent-rgb-r), var(--main-accent-rgb-g), var(--main-accent-rgb-b), 1);
+}
+body.minimalist-theme .timeline-h-item:hover .branch-dot {
+    box-shadow: none; /* No shadow on hover */
+}
+
+/* Positioning for branch lines and dots based on odd/even items */
+.timeline-h-item:nth-child(odd) .branch-line {
+    bottom: -166px;
+    height: 160px;
+}
+.timeline-h-item:nth-child(odd) .branch-dot {
+    bottom: -156px;
+}
+
+.timeline-h-item:nth-child(even) .branch-line {
+    top: -166px;
+    height: 160px;
+}
+.timeline-h-item:nth-child(even) .branch-dot {
+    top: -156px;
+}
+
+/* Responsive adjustments for smaller screens (switches to vertical layout) */
+@media (max-width: 768px) {
+    .horizontal-timeline-container {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        overflow-x: hidden;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .horizontal-timeline-line {
+        display: none;
+    }
+    .horizontal-timeline-items {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        min-width: unset;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        justify-content: flex-start;
+        gap: 0;
+    }
+    .timeline-h-item {
+        width: 100%;
+        flex-basis: auto;
+        min-width: unset;
+        max-width: unset;
+        margin: 0;
+        margin-bottom: 3rem;
+        padding-left: 2rem;
+    }
+    .timeline-h-item:nth-child(odd),
+    .timeline-h-item:nth-child(even) {
+        margin-top: 0;
+        margin-bottom: 3rem;
+    }
+
+    /* Conditional mobile specific vertical timeline lines/dots from index.html (Normal theme) */
+    body.normal-theme .timeline-h-item::before {
+        content: '';
+        position: absolute;
+        left: 1rem;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+        background-color: var(--main-accent);
+        border-radius: 2px;
+        box-shadow: 0 0 12px rgba(var(--main-accent-rgb-r), var(--main-accent-rgb-g), var(--main-accent-rgb-b), 0.7);
+    }
+    body.minimalist-theme .timeline-h-item::before {
+        box-shadow: none;
+    }
+
+    body.normal-theme .timeline-h-item::after {
+        word-break: break-word;
+        content: '';
+        position: absolute;
+        left: 0.7rem;
+        top: 1rem;
+        width: 1.25rem;
+        height: 1.25rem;
+        background-color: var(--main-accent);
+        border-radius: 50%;
+        border: 4px solid var(--bg-dark);
+        box-shadow: 0 0 0 6px rgba(var(--main-accent-rgb-r), var(--main-accent-rgb-g), var(--main-accent-rgb-b), 0.3), 0 0 15px rgba(var(--main-accent-rgb-r), var(--main-accent-rgb-g), var(--main-accent-rgb-b), 0.6);
+    }
+    body.minimalist-theme .timeline-h-item::after {
+        box-shadow: none;
+    }
+}
+
+/* Styles for the theme-adaptive Button */
+.theme-btn {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    line-height: 1.2;
+    overflow: hidden;
+    border: none; /* Default to no border, controlled by specific theme */
+    outline: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: var(--font-mono-var);
+    text-transform: uppercase;
+    color: var(--text-color-primary); /* Default text color, adjusted by theme */
+    z-index: 2;
+    text-wrap: wrap;
+    transition: color 0.5s ease, background-color 0.5s ease, border-width 0.5s ease, clip-path 0.5s ease, border-color 0.5s ease;
+}
+
+/* Normal Theme Button Specifics */
+body.normal-theme .theme-btn {
+    background-color: #3b82f6; /* bg-blue-600 from index.html */
+    color: #ffffff; /* text-white from index.html */
+    border: 2px solid #3b82f6; /* border-blue-500 from index.html */
+    border-radius: 9999px; /* rounded-full from index.html */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg from index.html */
+    transform: scale(1); /* Reset scale */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+body.normal-theme .theme-btn:hover {
+    background-color: #2563eb; /* hover:bg-blue-700 from index.html */
+    border-color: #2563eb; /* hover:border-blue-600 from index.html */
+    transform: scale(1.05);
+}
+body.normal-theme .theme-btn:before,
+body.normal-theme .theme-btn:after {
+    content: none; /* Hide pseudo-elements for normal button */
+}
+body.normal-theme .theme-btn__tag {
+    display: none; /* Hide tag for normal theme */
+}
+
+/* Cyberpunk Theme Button Specifics */
+body.cyberpunk-theme .theme-btn {
+    --primary: #ff00ff; /* neon-magenta */
+    --secondary: #00ffff; /* neon-cyan */
+    --tag-bg: #00ff00; /* neon-lime */
+    --tag-text: #0a0a1a; /* cyber-bg-dark */
+    --border-size: 4px;
+    --clip-path-custom: polygon(0 0, 100% 0, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 70%);
+
+    background: transparent; /* Main button background will be handled by pseudo-elements */
+    border: none; /* No visible border on the element itself */
+    border-radius: 0; /* No explicit border-radius */
+    box-shadow: none; /* No shadow on the element itself */
+    color: var(--tag-text); /* Text color for cyberpunk button */
+}
+body.cyberpunk-theme .theme-btn:before,
+body.cyberpunk-theme .theme-btn:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    clip-path: var(--clip-path-custom);
+    z-index: -1;
+    transition: transform 0.2s ease-out, background-color 0.5s ease, clip-path 0.5s ease;
+}
+body.cyberpunk-theme .theme-btn:after {
+    background: var(--primary);
+}
+body.cyberpunk-theme .theme-btn:before {
+    background: var(--secondary);
+    transform: translate(var(--border-size), 0);
+}
+body.cyberpunk-theme .theme-btn__tag {
+    display: block; /* Show tag for cyberpunk theme */
+    position: absolute;
+    padding: 1px 4px;
+    letter-spacing: 1px;
+    line-height: 1;
+    bottom: -5%;
+    right: 5%;
+    color: var(--tag-text);
+    background: var(--tag-bg);
+    font-size: 0.75rem;
+    box-shadow: 2px 0 inset #00bfff; /* electric-blue */
+    pointer-events: none;
+    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Hover states for cyberpunk button */
+body.cyberpunk-theme .theme-btn:hover:after {
+    transform: translate(0, 0);
+}
+body.cyberpunk-theme .theme-btn:hover:before {
+    transform: translate(calc(var(--border-size) * -1), 0);
+}
+body.cyberpunk-theme .theme-btn:hover {
+     transform: scale(1.05); /* Hover scale effect for cyberpunk button */
+}
+
+/* Minimalist Theme Button Specifics */
+body.minimalist-theme .theme-btn {
+    background-color: var(--main-accent); /* Black */
+    color: var(--bg-dark); /* White text */
+    border: 1px solid var(--text-color-secondary); /* Thin gray border */
+    border-radius: 0; /* Square corners */
+    box-shadow: none; /* No shadow */
+    transform: none; /* No scale */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body.minimalist-theme .theme-btn:hover {
+    background-color: var(--bg-medium); /* Lighter gray on hover */
+    color: var(--main-accent); /* Black text on hover */
+    border-color: var(--highlight); /* Medium gray border on hover */
+    transform: none; /* No scale */
+}
+
+body.minimalist-theme .theme-btn:before,
+body.minimalist-theme .theme-btn:after {
+    content: none; /* Hide pseudo-elements */
+}
+
+body.minimalist-theme .theme-btn__tag {
+    display: none; /* Hide tag */
+}
+
+
+/* Ensure titles wrap within project and blog cards */
+#projects .project-card h3,
+#blog .blog-card h3 {
+    word-break: break-word;
+}
+
+/* Specific background colors now use variables */
+.bg-medium-var { background-color: var(--bg-medium); transition: background-color 0.5s ease;}
+.bg-light-var { background-color: var(--bg-light); transition: background-color 0.5s ease;}
+.bg-dark-var { background-color: var(--bg-dark); transition: background-color 0.5s ease;}
+
+/* Specific border/text color classes using variables */
+.border-main-accent-var { border-color: var(--main-accent) !important; transition: border-color 0.5s ease;}
+.border-secondary-accent-var { border-color: var(--secondary-accent) !important; transition: border-color 0.5s ease;}
+.text-main-accent-var { color: var(--main-accent); transition: color 0.5s ease;}
+.text-secondary-accent-var { color: var(--secondary-accent); transition: color 0.5s ease;}
+.text-highlight-var { color: var(--highlight); transition: color 0.5s ease;}
+.text-primary-var { color: var(--text-color-primary); transition: color 0.5s ease;}
+.text-secondary-var { color: var(--text-color-secondary); transition: color 0.5s ease;}
+
+/* Hero H1 specific styles to use theme variables */
+#hero-title {
+    background-image: linear-gradient(to right, var(--h1-gradient-from), var(--h1-gradient-to));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: var(--h1-text-shadow);
+}
+
+/* --- Theme Selection Screen Specific Styles (Black and White) --- */
+#themeSelectionScreen {
+    background-color: #FFFFFF; /* White background for the selection screen */
+    color: #000000; /* Black text for the selection screen */
+}
+#themeSelectionScreen h2 {
+    color: #000000; /* Ensure heading is black */
+    text-shadow: none; /* No text shadow for the heading */
+    background-image: none; /* No gradient for the heading */
+    -webkit-text-fill-color: #000000; /* Ensure text is black for heading */
+}
+/* This class ensures the selection screen is visible initially */
+/* No longer needed, as display is managed by JS directly on body load. */
+
+
+/* Styling for the buttons on the theme selection screen */
+.theme-select-btn {
+    background-color: #111111; /* Dark gray for button background */
+    border: 2px solid #555555; /* Medium gray border */
+    color: #FFFFFF; /* White text */
+    box-shadow: none; /* No shadow by default */
+    transition: all 0.3s ease;
+    text-transform: uppercase; /* Ensure text is uppercase */
+}
+.theme-select-btn:hover {
+    background-color: #333333; /* Slightly lighter gray on hover */
+    border-color: #FFFFFF; /* White border on hover */
+}
+
+/* Specific text styling for the Cyberpunk button on the selection screen */
+.cyberpunk-selection-text-glitch {
+    font-family: 'Space Mono', monospace; /* Use cyberpunk mono font */
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    color: #FFFFFF; /* White text for the glitch */
+    text-shadow: 0 0 5px rgba(255,255,255,0.5); /* Subtle white shadow for glitch */
+}
+
+/* B&W Glitch effect for the Cyberpunk selection button */
+@keyframes glitch-bw {
+    0%, 100% { transform: translate(0); text-shadow: 0 0 5px rgba(255,255,255,0.5); }
+    20% { transform: translate(-1px, 1px); text-shadow: 0 0 5px rgba(0,0,0,0.5); }
+    40% { transform: translate(1px, -1px); text-shadow: 0 0 5px rgba(255,255,255,0.5); }
+    60% { transform: translate(-1px, -1px); text-shadow: 0 0 5px rgba(0,0,0,0.5); }
+    80% { transform: translate(1px, 1px); text-shadow: 0 0 5px rgba(255,255,255,0.5); }
+}
+#themeSelectionScreen .cyberpunk-selection-text-glitch {
+    animation: glitch-bw 3s infinite alternate;
+}
+
